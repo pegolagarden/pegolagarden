@@ -1,0 +1,268 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          pergola-garden-website/
+|-- index.html
+|-- styles.css
+|-- images/
+    |-- logo.png (הלוגו שסיפקת)
+    |-- background.jpg (תמונה לרקע)
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="פרגולה וגן - הקמת גינות מודרניות, אחזקה, שיפוצים, פרגולות ועבודות עץ">
+    <meta name="keywords" content="פרגולות, גינות, שיפוץ גינה, עבודות עץ">
+    <title>פרגולה וגן</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- כותרת -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="פרגולה וגן">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">אודות</a></li>
+                <li><a href="#services">שירותים</a></li>
+                <li><a href="#contact">יצירת קשר</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- חלק ראשי -->
+    <section class="hero">
+        <h1>פרגולה וגן</h1>
+        <p>הקמת גינות מודרניות, פרגולות ועבודות עץ ברמה הגבוהה ביותר</p>
+        <a href="#contact" class="cta-button">צור קשר</a>
+    </section>
+
+    <!-- אודות -->
+    <section id="about" class="section">
+        <h2>אודות</h2>
+        <p>פרגולה וגן מתמחים בתחום הגינון המודרני, בגינון בגובה ועבודות בעץ. אנחנו משתמשים בחומרים האיכותיים ביותר שיש. כל לקוח מתלווה אלינו למשתלה לבחירת צמחים כך שכל לקוח יהיה מעודכן בכל צעד בפרויקט. כל לקוח מקבל שנה אחריות, ויש אחריות של 3 חודשים על צמחים שלא נקלטו בשתילה.</p>
+    </section>
+
+    <!-- שירותים -->
+    <section id="services" class="section">
+        <h2>שירותים</h2>
+        <div class="service">
+            <h3>הקמת גינות</h3>
+            <p>הקמה ותחזוקת גינות מודרניות המותאמות אישית לצרכי הלקוח.</p>
+        </div>
+        <div class="service">
+            <h3>אחזקת גינות</h3>
+            <p>שירותי אחזקה לגינות קיימות, כולל דישון, גיזום וטיפוח.</p>
+        </div>
+        <div class="service">
+            <h3>שיפוצים</h3>
+            <p>שיפוץ ושדרוג גינות קיימות כדי להעניק להן מראה חדש ומודרני.</p>
+        </div>
+        <div class="service">
+            <h3>הקמת פרגולות ודקים</h3>
+            <p>תכנון ובניית פרגולות ודקים באיכות הגבוהה ביותר.</p>
+        </div>
+        <div class="service">
+            <h3>עבודות עץ</h3>
+            <p>עבודות עץ בהתאמה אישית לכל צורך ורצון.</p>
+        </div>
+    </section>
+
+    <!-- יצירת קשר -->
+    <section id="contact" class="section">
+        <h2>יצירת קשר</h2>
+        <form action="mailto:pergolagarden1@gmail.com" method="post" enctype="text/plain">
+            <label for="first-name">שם פרטי:</label>
+            <input type="text" id="first-name" name="first-name" required>
+            
+            <label for="last-name">שם משפחה:</label>
+            <input type="text" id="last-name" name="last-name" required>
+            
+            <label for="phone">טלפון:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="email">מייל:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <button type="submit">שלח</button>
+        </form>
+    </section>
+
+    <!-- כותרת תחתונה -->
+    <footer>
+        <p>© 2024 פרגולה וגן | מייל: <a href="mailto:pergolagarden1@gmail.com">pergolagarden1@gmail.com</a> | טלפון: <a href="tel:0522563993">052-256-3993</a></p>
+    </footer>
+</body>
+</html>
+
+/* עיצוב כללי */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    direction: rtl; /* מימין לשמאל */
+    background-color: #f9f9f9;
+}
+
+/* עיצוב הכותרת */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+    max-height: 60px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+/* עיצוב החלק הראשי */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: url('images/background.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.hero .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* עיצוב החלקים */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.section p, .service p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.service {
+    margin-bottom: 30px;
+}
+
+/* עיצוב טופס יצירת קשר */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #e55a00;
+}
+
+/* עיצוב כותרת תחתונה */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
